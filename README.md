@@ -9,7 +9,7 @@ trunk : __802 dot1q__
 mdp console dans le CLI (sous cisco)
 * en
 * conf t
-* console 0
+* line con 0
 * password 'console'
 * login
 * ctrl Z
