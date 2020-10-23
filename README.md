@@ -55,6 +55,13 @@ declarer un mode 'trunk' (etendre la communication des vlans)
 * do sh ru
 * crtl Z
 
+configurer son router (distance)
+* conf t
+* username 'admin' password 'admin'
+* line vty 0 4
+* login local
+* end
+
 
 
 
