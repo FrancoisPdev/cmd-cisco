@@ -1,12 +1,14 @@
 # cmd-cisco
-find a little list of command CISCO via CLI 
+find a little list of command CISCO via CLI de certaine serie*
 
+'show startup-config' (ou 'sh ru') : à utiliser le plus souvent possible.
 'enable password _mot de passe_' - __mdp claire__
 'enable secret _mot de passe_'  - __mdp hashé__
 vlan : __802 1q__
 trunk : __802 dot1q__
 
-mdp console dans le CLI (sous cisco)
+# Security
+### mdp console dans le CLI (sous cisco)
 * en
 * conf t
 * line con 0
@@ -15,14 +17,25 @@ mdp console dans le CLI (sous cisco)
 * ctrl Z
 * quitter la cession
 
- renomer un switch (sous CISCO)
+### configurer son router (distance)
+* conf t
+* line vty 0 4
+* username 'admin' password 'admin'
+* login local
+* end
+
+# Utility
+
+### renomer un switch (sous CISCO)
 * en
 * conf t
 * host name '_mon_nom_'
 * ctrl Z
 * quitter la cession
 
-creer une vlan (sous CISCO)
+# Vlan conf.
+
+#### creer une vlan (sous CISCO)
 * en
 * conf t
 * '_vlan 40_'
@@ -32,7 +45,7 @@ creer une vlan (sous CISCO)
 * do sh ru
 * ctrl Z
 
-Lier un vlan dans un port (sous CISCO)
+### Lier un vlan dans un port (sous CISCO)
 * conf t
 * interface fa 0/1
 * switch mode access
@@ -40,36 +53,44 @@ Lier un vlan dans un port (sous CISCO)
 * do sh vlan
 * ctrl Z
 
-attribuer un ip sur une interface vlan (sous CISCO)
+### attribuer un ip sur une interface vlan (sous CISCO)
 * en
 * conf t
 * interface vlan 1
-* ip address192.168.1.100 255.255.255.0
+* ip address 192.168.1.100 255.255.255.0
 * no shutdown
 * ctrl Z
 
-declarer un mode 'trunk' (etendre la communication des vlans)
+### declarer un mode 'trunk' (etendre la communication des vlans de manière physique)
 * conf t
 * interface fa 0/2
 * switchport mode trunk
 * do sh ru
 * crtl Z
 
-configurer son router (distance)
-* conf t
-* username 'admin' password 'admin'
-* line vty 0 4
-* login local
-* end
+# Save conf.
 
+### enregistrer sa configuration
+* en
+* wr ou copy running-config startup-config
 
+### balancer sa config (enregistré) sur un serveur
+* en
+* copy run tftp
+* suivre les indications et valider
+(il existe d'autre manip. avec CISCO)
 
+### recuper sa conf.  sur le server
+* en
+* copy tftp start
+* suivre les indications et valider
+* reload
 
+# Supprimer la conf. courante
 
-
-
-
-
+### conf. à 0
+* en
+* write erase
 
 
 
