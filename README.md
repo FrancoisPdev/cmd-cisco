@@ -8,6 +8,7 @@ vlan : __802 1q__
 trunk : __802 dot1q__
 
 # Security
+
 ### mdp console dans le CLI (sous cisco)
 * en
 * conf t
@@ -23,6 +24,14 @@ trunk : __802 dot1q__
 * username 'admin' password 'admin'
 * login local
 * end
+
+# Description
+
+### ajouter une description 
+* en
+* conf t
+* int fa, vlan, etc...
+* description "ma description"
 
 # Utility
 
