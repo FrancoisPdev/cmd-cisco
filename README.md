@@ -57,15 +57,13 @@ trunk : __802 dot1q__
 * en
 * conf t
 * '_vlan 40_'
-* name '_mon_nom_'
-* do sh ru
 * hostname '_mon_nom_'
 * do sh ru
 * ctrl Z
 
-### Lier un vlan dans un port (sous CISCO)
+### Lier une vlan dans un port (sous CISCO)
 * conf t
-* interface fa 0/1
+* interface fa '0/x'
 * switch mode access
 * switchport access '_mon_nom-de-vlan_'
 * do sh vlan
@@ -74,15 +72,17 @@ trunk : __802 dot1q__
 ### attribuer un ip sur une interface vlan (sous CISCO)
 * en
 * conf t
-* interface vlan 1
-* ip address 192.168.1.100 255.255.255.0
+* interface 'vlan x'
+* ip address '192.168.1.100 255.255.255.0'
 * no shutdown
 * ctrl Z
 
 ### declarer un mode 'trunk' (etendre la communication des vlans de manière physique)
 * conf t
-* interface fa 0/2
+* interface fa '0/x'
+* switchport trunk encapsulation dot1q
 * switchport mode trunk
+* switchport trunk allow vlan 'x-x' (ou juste vlan 'x'  pour une seul vlan)
 * do sh ru
 * crtl Z
 
