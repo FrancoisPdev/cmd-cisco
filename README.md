@@ -32,6 +32,15 @@ trunk : __802 dot1q__
 * conf t
 * int fa, vlan, etc...
 * description "ma description"
+* end
+
+### Banner
+* en
+* conf t
+* banner login %
+* Bonjour tout le monde %
+* end
+
 
 # Utility
 
