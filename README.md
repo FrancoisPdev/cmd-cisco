@@ -56,7 +56,7 @@ trunk : __802 dot1q__
 #### creer une vlan (sous CISCO)
 * en
 * conf t
-* '_vlan 40_'
+* '_vlan X_'
 * hostname '_mon_nom_'
 * do sh ru
 * ctrl Z
@@ -65,9 +65,16 @@ trunk : __802 dot1q__
 * conf t
 * interface fa '0/x'
 * switch mode access
-* switchport access '_mon_nom-de-vlan_'
+* switchport access '_mon_nom-de-vlan X_'
 * do sh vlan
 * ctrl Z
+
+ ### créer des 'sub-interfaces' et leur attribuer une VLAN et une adresse IP. Cette interface deviendra le 'gateway' du VLAN (routeur CISCO)
+* en
+* int fa '0/x.X'
+* encapsulation dot1Q 'X'
+* ip address '192.168.1.254 255.255.255.0'
+* ex
 
 ### attribuer un ip sur une interface vlan (sous CISCO)
 * en
@@ -82,7 +89,7 @@ trunk : __802 dot1q__
 * interface fa '0/x'
 * switchport trunk encapsulation dot1q
 * switchport mode trunk
-* switchport trunk allow vlan 'x-x' (ou juste vlan 'x'  pour une seul vlan)
+* switchport trunk 'allow' vlan 'x-x' (ou juste vlan 'x'  pour une seul vlan)
 * do sh ru
 * crtl Z
 
