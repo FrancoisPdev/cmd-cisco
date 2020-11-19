@@ -41,7 +41,6 @@ trunk : __802 dot1q__
 * Bonjour tout le monde %
 * end
 
-
 # Utility
 
 ### renomer un switch (sous CISCO)
@@ -53,7 +52,7 @@ trunk : __802 dot1q__
 
 # Vlan conf.
 
-#### creer une vlan (sous CISCO)
+#### creer un vlan (sous CISCO)
 * en
 * conf t
 * '_vlan X_'
@@ -61,15 +60,15 @@ trunk : __802 dot1q__
 * do sh ru
 * ctrl Z
 
-### Lier une vlan dans un port (sous CISCO)
+### Lier un (ou plusieurs) port dans un vlan (sous CISCO)
 * conf t
-* interface fa '0/x'
+* interface fa '0/x' | interface range fa '0/x-x'
 * switch mode access
 * switchport access '_mon_nom-de-vlan X_'
 * do sh vlan
 * ctrl Z
 
- ### créer des 'sub-interfaces' et leur attribuer une VLAN et une adresse IP. Cette interface deviendra le 'gateway' du VLAN (routeur CISCO)
+ ### créer des 'sub-interfaces' et leur attribuer un VLAN et une adresse IP. Cette interface deviendra le 'gateway' du VLAN (routeur CISCO)
 * en
 * int fa '0/x.X'
 * encapsulation dot1Q 'X'
