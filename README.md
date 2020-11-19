@@ -47,7 +47,7 @@ trunk : __802 dot1q__
 ### renomer un switch (sous CISCO)
 * en
 * conf t
-* host name '_mon_nom_'
+* hostname '_mon_nom_'
 * ctrl Z
 * quitter la cession
 
@@ -57,7 +57,7 @@ trunk : __802 dot1q__
 * en
 * conf t
 * '_vlan X_'
-* hostname '_mon_nom_'
+* name '_mon_nom_'
 * do sh ru
 * ctrl Z
 
