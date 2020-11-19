@@ -13,7 +13,7 @@ trunk : __802 dot1q__
 * en
 * conf t
 * line con 0
-* password 'console'
+* username 'name' password 'console'
 * login
 * ctrl Z
 * quitter la cession
@@ -37,7 +37,7 @@ trunk : __802 dot1q__
 ### Banner
 * en
 * conf t
-* banner login %
+* banner motd %
 * Bonjour tout le monde %
 * end
 
