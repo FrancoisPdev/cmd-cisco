@@ -2,11 +2,16 @@
 find a little list of command CISCO via CLI de certaine serie*
 
 'show startup-config' (ou 'sh ru') : à utiliser le plus souvent possible.
+
 'enable password _mot de passe_' - __mdp claire__
+
 'enable secret _mot de passe_'  - __mdp hashé__
+
 vlan : __802 1q__
+
 trunk : __802 dot1q__
 
+- - -
 # Security
 
 ### mdp console dans le CLI (sous cisco)
@@ -116,6 +121,22 @@ trunk : __802 dot1q__
 * en
 * write erase
 
+- - - 
+# Vocabulaires
+
+* __Carte d'interface réseau (NIC)__ - *Une NIC relie physiquement le dispositif terminal au réseau.*
+* __Port physique__ - *Un connecteur ou une prise sur un dispositif de réseau où le support se connecte à un dispositif terminal ou à un autre dispositif de réseau.*
+* __Interface__ - *Ports spécialisés sur un dispositif de réseau qui se connecte à des réseaux individuels. Comme les routeurs connectent les réseaux, les ports d'un routeur sont appelés interfaces de réseau.*
+* __Schémas de topologie physique__ - *Les diagrammes de topologie physique illustrent l'emplacement physique des dispositifs intermédiaires et de l'installation des câbles. Vous pouvez voir que les pièces dans lesquelles se trouvent ces périphériques sont étiquetées dans la topologie physique.*
+* __Schémas de topologie logique__ - *Les diagrammes de topologie logiques illustrent les périphériques, les ports et le schéma d'adressage du réseau. Vous pouvez voir quels périphériques terminaux sont connectés à quels périphériques intermédiaires et quels supports sont utilisés.*
 
 
+- - -
+# Sources
 
+[[Bit](https://fr.wikipedia.org/wiki/Bit)] -
+[[TCP/UDP](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)] -
+[[OSI](https://fr.wikipedia.org/wiki/Modèle_OSI)] -
+[[IPBX](https://fr.wikipedia.org/wiki/IPBX)] -
+[[RFC](https://fr.wikipedia.org/wiki/Request_for_comments)] -
+[[IETF](https://fr.wikipedia.org/wiki/Internet_Engineering_Task_Force)]
