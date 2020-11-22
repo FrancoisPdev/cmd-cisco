@@ -1,5 +1,10 @@
 # Sommaire
-[Commandes](#cmd-cisco)
+* [Commandes](#cmd-cisco)
+* [Security](#security)
+* [Description](#description)
+* [Utility](#utility)
+* [VLAN](#vlan-conf)
+* [Save](#save-conf)
 
 [Vocabulaires](#vocabulaires)
 
@@ -39,7 +44,7 @@ trunk : __802 dot1q__
 * username 'admin' password 'admin'
 * login local
 * end
-
+- - -
 # Description
 
 ### ajouter une description 
@@ -55,7 +60,7 @@ trunk : __802 dot1q__
 * banner motd %
 * Bonjour tout le monde %
 * end
-
+- - -
 # Utility
 
 ### renomer un switch (sous CISCO)
@@ -64,7 +69,7 @@ trunk : __802 dot1q__
 * hostname '_mon_nom_'
 * ctrl Z
 * quitter la cession
-
+- - -
 # Vlan conf.
 
 #### creer un vlan (sous CISCO)
@@ -106,7 +111,7 @@ trunk : __802 dot1q__
 * switchport trunk 'allow' vlan 'x-x' (ou juste vlan 'x'  pour une seul vlan)
 * do sh ru
 * crtl Z
-
+- - -
 # Save conf.
 
 ### enregistrer sa configuration
@@ -124,7 +129,7 @@ trunk : __802 dot1q__
 * copy tftp start
 * suivre les indications et valider
 * reload
-
+- - -
 # Supprimer la conf. courante
 
 ### conf. à 0
@@ -139,6 +144,7 @@ trunk : __802 dot1q__
 * __Carte d'interface réseau (NIC)__ - *Une NIC relie physiquement le dispositif terminal au réseau.*
 * __Port physique__ - *Un connecteur ou une prise sur un dispositif de réseau où le support se connecte à un dispositif terminal ou à un autre dispositif de réseau.*
 * __Interface__ - *Ports spécialisés sur un dispositif de réseau qui se connecte à des réseaux individuels. Comme les routeurs connectent les réseaux, les ports d'un routeur sont appelés interfaces de réseau.*
+* __Redondance__ - *Le fait de disposer de plusieurs chemins vers une destination*
 * __Schémas de topologie physique__ - *Les diagrammes de topologie physique illustrent l'emplacement physique des dispositifs intermédiaires et de l'installation des câbles. Vous pouvez voir que les pièces dans lesquelles se trouvent ces périphériques sont étiquetées dans la topologie physique.*
 * __Schémas de topologie logique__ - *Les diagrammes de topologie logiques illustrent les périphériques, les ports et le schéma d'adressage du réseau. Vous pouvez voir quels périphériques terminaux sont connectés à quels périphériques intermédiaires et quels supports sont utilisés.*
 * __Câble__ - *Généralement proposé par les fournisseurs de services de télévision par câble, le signal de données Internet est transmis sur le même câble que celui qui achemine la télévision par câble. Il offre une large bande passante, une grande disponibilité et une connexion permanente à l'internet.*
@@ -149,6 +155,7 @@ trunk : __802 dot1q__
 * __Ligne louée dédiée__ - *Les lignes louées sont des circuits réservés au sein du réseau du fournisseur de services qui relient des bureaux géographiquement séparés pour un réseau privé de voix et/ou de données. Les circuits sont généralement loués sur une base mensuelle ou annuelle.*
 * __Metro Ethernet__ - *Ceci est parfois connu sous le nom Ethernet WAN. Dans ce module, nous l'appellerons Metro Ethernet. Les Metro ethernets étendent la technologie d'accès au LAN au WAN. Ethernet est une technologie LAN que vous découvrirez dans un autre module.*
 * __Business DSL__ - *Business DSL est disponible dans différents formats. Un choix populaire est la ligne d'abonné numérique symétrique (SDSL) qui est similaire à la version grand public de la DSL mais qui permet les téléchargements en amont et en aval aux mêmes vitesses élevées.*
+
 
 - - - 
 [Sommaire](#sommaire)
