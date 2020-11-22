@@ -155,7 +155,9 @@ trunk : __802 dot1q__
 * __Ligne louée dédiée__ - *Les lignes louées sont des circuits réservés au sein du réseau du fournisseur de services qui relient des bureaux géographiquement séparés pour un réseau privé de voix et/ou de données. Les circuits sont généralement loués sur une base mensuelle ou annuelle.*
 * __Metro Ethernet__ - *Ceci est parfois connu sous le nom Ethernet WAN. Dans ce module, nous l'appellerons Metro Ethernet. Les Metro ethernets étendent la technologie d'accès au LAN au WAN. Ethernet est une technologie LAN que vous découvrirez dans un autre module.*
 * __Business DSL__ - *Business DSL est disponible dans différents formats. Un choix populaire est la ligne d'abonné numérique symétrique (SDSL) qui est similaire à la version grand public de la DSL mais qui permet les téléchargements en amont et en aval aux mêmes vitesses élevées.*
-
+* __Confidentialité__ - *La confidentialité des données signifie que seuls les destinataires prévus et autorisés peuvent accéder aux données et les lire.*
+* __Intégrité__ - *L'intégrité des données garantit aux utilisateurs que les informations n'ont pas été altérées lors de leur transmission, de l'origine à la destination.*
+* __Disponibilité__ - *La disponibilité des données garantit aux utilisateurs un accès rapide et fiable aux services de données pour les utilisateurs autorisés*
 
 - - - 
 [Sommaire](#sommaire)
