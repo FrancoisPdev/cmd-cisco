@@ -159,6 +159,14 @@ trunk : __802 dot1q__
 * __Intégrité__ - *L'intégrité des données garantit aux utilisateurs que les informations n'ont pas été altérées lors de leur transmission, de l'origine à la destination.*
 * __Disponibilité__ - *La disponibilité des données garantit aux utilisateurs un accès rapide et fiable aux services de données pour les utilisateurs autorisés*
 
+### Il existe plusieurs menaces externes courantes pour les réseaux :
+* __Virus, vers, et chevaux de Trois__ - *logiciels malveillants et code arbitraire s'exécutant sur un périphérique utilisateur.*
+* __Spyware et adware__ - *Ce sont des types de logiciels qui sont installés sur l'appareil d'un utilisateur. Le logiciel recueille alors secrètement des informations sur l'utilisateur.*
+* __Attaques du jour zéro__ - *Appelées aussi attaques de l'heure zéro, elles se produisent le premier jour où une vulnérabilité est connue.*
+* __Attaques des acteurs de menace__ - *Une personne malveillante attaque les appareils des utilisateurs ou les ressources du réseau.*
+* __Attaques par déni de service__ - *Ces attaques ralentissent ou bloquent les applications et les processus sur un périphérique réseau.*
+* __Interception et vol de données__ - *Cette attaque permet de capturer des informations privées sur le réseau d'une organisation.*
+* __Usurpation d'identité__ - *Cette attaque consiste à voler les identifiants de connexion d'un utilisateur afin d'accéder à des données privées*
 - - - 
 [Sommaire](#sommaire)
 - - -
