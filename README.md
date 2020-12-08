@@ -1,4 +1,4 @@
-# Sommaire
+# Sommaire 
 * [Commandes](#cmd-cisco)
 * [Security](#security)
 * [Description](#description)
@@ -12,6 +12,24 @@
 
 - - -
 # Introduction
+
+Quand j'ai créé ce dépôt, c'était pour garder une trace de mon apprentissage. Ceci restera un petit coin, public, où l'on pourra peut-être pécho des informations ! Il existe d'excellents programmes d'émulation de terminal permettant de se connecter à un périphérique réseau via une connexion série sur un port de console ou via une connexion SSH ou Telnet.
+
+Par mesure de sécurité, le logiciel Cisco IOS sépare l'accès à la gestion en deux modes de commande:
+
+* Mode d'exécution utilisateur - ce mode offre des fonctionnalités limitées, mais s'avère utile pour les opérations de base. Il autorise seulement un nombre limité de commandes de surveillance de base, mais il n'autorise aucune commande susceptible de modifier la configuration du périphérique. Le mode d'exécution utilisateur se reconnaît à l'invite CLI qui se termine par le symbole >.
+
+* Mode d'exécution privilégié - pour exécuter les commandes de configuration, un administrateur réseau doit accéder au mode d'exécution privilégié. Pour accéder aux modes de configuration supérieurs, comme celui de configuration globale, il est nécessaire de passer par le mode d'exécution privilégié. Le mode d'exécution privilégié se reconnaît à l'invite qui se termine par le symbole # .
+
+Différentes commandes sont utilisées pour entrer et sortir des invites de commandes. Pour passer du mode utilisateur au mode privilégié, utilisez la commande __enable__ . Utilisez la commande __disable__ du mode d'exécution privilégié pour retourner au mode d'exécution utilisateur.
+
+Pour passer de n'importe quel sous-mode de configuration du mode de configuration globale au mode situé un niveau plus haut dans la hiérarchie des modes, saisissez la commande __exit__ .
+
+Pour passer de n'importe quel sous-mode de configuration au mode d'exécution privilégié, entrez la commande __end__ ou utilisez la combinaison de touches __Ctrl+Z__
+
+Vous pouvez aussi passer directement d'un sous-mode de configuration à un autre. Notez qu'après avoir sélectionné une interface, l'invite de commande change de __(config-line)#__ à __(config-if)#__.
+
+- - -
 find a little list of command CISCO via CLI de certaine serie*
 
 'show startup-config' (ou 'sh ru') : à utiliser le plus souvent possible.
@@ -26,6 +44,26 @@ trunk : __802 dot1q__
 
 - - -
 ### cmd-cisco
+Légende du tableau
+
+| Touche  | Description          |
+| :--------------- |:---------------|
+| Tabulation  | 	Complète un nom de commande entré partiellement.|
+| Retour |  arrière	Efface le caractère à gauche du curseur.|
+| Ctrl+D | 	Efface le caractère à l'emplacement du curseur. |
+| Ctrl+K |  	Efface tous les caractères à partir du curseur jusqu'à la fin de la ligne de commande.|
+| Échap D | 	Efface tous les caractères à partir du curseur jusqu'à la fin du mot.|
+| Ctrl+U   |	Efface tous les caractères à partir du curseur jusqu'au début de la ligne de commande.|
+| ou Ctrl+X |	Efface le mot à gauche du curseur.|
+| Ctrl+W| Déplace le curseur vers le début de la ligne.|
+| Ctrl+A	|Touche fléchée vers la gauche ou Ctrl+B	Déplace le curseur d'un caractère vers la gauche. |
+| Échap B |Déplace le curseur d'un mot vers la gauche.|
+| Échap F | 	Déplace le curseur d'un mot vers la droite.|
+| Flèchedroite ou Ctrl+F |Déplace le curseur d'un caractère vers la droite.|
+| Ctrl+E|	Déplace le curseur vers la fin de la ligne.|
+| Haut ou Ctrl+P |Rappelle les commandes antérieures en commençant par les plus récentes.|
+| Ctrl+R ou Ctrl+I ou Ctrl+L|	Rappelle l'invite du système et la ligne interrompue par la réception d'un message IOS.|
+
 
 # Security
 
