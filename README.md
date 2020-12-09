@@ -21,6 +21,13 @@ Par mesure de sécurité, le logiciel Cisco IOS sépare l'accès à la gestion e
 
 * Mode d'exécution privilégié - pour exécuter les commandes de configuration, un administrateur réseau doit accéder au mode d'exécution privilégié. Pour accéder aux modes de configuration supérieurs, comme celui de configuration globale, il est nécessaire de passer par le mode d'exécution privilégié. Le mode d'exécution privilégié se reconnaît à l'invite qui se termine par le symbole # .
 
+Les directives pour la configuration des noms d'hôte sont répertoriées ci-dessous:
+* débutent par une lettre
+* Ne contiennent pas d'espaces
+* se terminent par une lettre ou un chiffre
+* Ne comportent que des lettres, des chiffres et des tirets
+* Comportent moins de 64 caractères
+
 Différentes commandes sont utilisées pour entrer et sortir des invites de commandes. Pour passer du mode utilisateur au mode privilégié, utilisez la commande __enable__ . Utilisez la commande __disable__ du mode d'exécution privilégié pour retourner au mode d'exécution utilisateur.
 
 Pour passer de n'importe quel sous-mode de configuration du mode de configuration globale au mode situé un niveau plus haut dans la hiérarchie des modes, saisissez la commande __exit__ .
@@ -29,6 +36,7 @@ Pour passer de n'importe quel sous-mode de configuration au mode d'exécution pr
 
 Vous pouvez aussi passer directement d'un sous-mode de configuration à un autre. Notez qu'après avoir sélectionné une interface, l'invite de commande change de __(config-line)#__ à __(config-if)#__.
 
+_N'oubliez pas de mettre à jour la documentation chaque fois que vous ajoutez ou modifiez un périphérique. Dans la documentation, identifiez les périphériques par leur emplacement, leur rôle et leur adresse._
 - - -
 find a little list of command CISCO via CLI de certaine serie*
 
@@ -47,7 +55,7 @@ trunk : __802 dot1q__
 Légende du tableau
 
 | Touche  | Description          |
-| :--------------- |:---------------|
+| :--------------- | :--------------- |
 | Tabulation  | 	Complète un nom de commande entré partiellement.|
 | Retour |  arrière	Efface le caractère à gauche du curseur.|
 | Ctrl+D | 	Efface le caractère à l'emplacement du curseur. |
@@ -64,8 +72,29 @@ Légende du tableau
 | Haut ou Ctrl+P |Rappelle les commandes antérieures en commençant par les plus récentes.|
 | Ctrl+R ou Ctrl+I ou Ctrl+L|	Rappelle l'invite du système et la ligne interrompue par la réception d'un message IOS.|
 
+| Touche  | Description          |
+| :--------------- | :--------------- |
+| Touche Entrée	 |Affiche l'écran suivant.|
+| Barre d'espace	 |Termine la chaîne d'affichage et revient au mode d'exécution privilégié.|
+| Toute autre clé	 | Termine la chaîne d'affichage et revient au mode d'exécution privilégié |
+
+Ce tableau répertorie les commandes utilisées pour quitter une opération:
+| Touche  | Description          |
+| :--------------- | :--------------- |
+| Ctrl+C	 | Dans un mode de configuration, permet de quitter le mode de configuration et de retourner au mode d'exécution privilégié. à partir du mode d'exécution, l'invite reparaît .|
+| Ctrl+Z	 | Dans un mode de configuration, permet de quitter le mode de configuration et de retourner au mode d'exécution privilégié.|
+| __Ctrl+Maj+6__	 | Séquence d'interruption permettant d'abandonner les recherches DNS, traceroutes, pings, etc.|
+
 
 # Security
+Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisir les mots de passe, respectez les règles suivantes:
+
+* Utilisez des mots de passe de plus de 8 caractères.
+* Utilisez une combinaison de lettres majuscules et minuscules, des chiffres, des caractères spéciaux et/ou des séquences de chiffres.
+* Évitez d'utiliser le même mot de passe pour tous les périphériques.
+* N'utilisez pas des mots courants car ils sont faciles à deviner.
+
+###### Utilisez une recherche sur Internet pour trouver un générateur de mot de passe. 
 
 ### mdp console dans le CLI (sous cisco)
 * en
@@ -76,12 +105,25 @@ Légende du tableau
 * ctrl Z
 * quitter la cession
 
-### configurer son router (distance)
+### sécuriser l'accès au mode d'exécution privilégié
+* en
 * conf t
-* line vty 0 4
+* enable secret 'mot de passe'
+* exit
+
+### configurer son router (distance)
+* en
+* conf t
+* line vty 0 4 (0 15)
 * username 'admin' password 'admin'
-* login local
+* login
 * end
+
+###  chiffrer tous les mots de passe en texte clair
+* en
+* conf t
+* 'service password-encryption'
+
 - - -
 # Description
 
@@ -92,12 +134,13 @@ Légende du tableau
 * description "ma description"
 * end
 
-### Banner
+### Banner (MOTD (Message Of The Day))
 * en
 * conf t
-* banner motd %
-* Bonjour tout le monde %
+* banner motd % ou #
+* Bonjour tout le monde %/#
 * end
+###### Les bannières peuvent constituer une pièce importante dans un procès intenté à une personne qui aurait accédé illégalement à un périphérique.
 - - -
 # Utility
 
@@ -107,6 +150,12 @@ Légende du tableau
 * hostname '_mon_nom_'
 * ctrl Z
 * quitter la cession
+
+### Configurez l'horloge
+* en
+* clock set? (Le point d'interrogation (?) fournit une aide et vous permet de
+déterminer le mode de saisie attendu pour configurer l'instruction)
+* show clock (pour verifier les paramètres.)
 - - -
 # Vlan conf.
 
