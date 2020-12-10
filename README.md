@@ -268,6 +268,12 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * __Confidentialité__ - *La confidentialité des données signifie que seuls les destinataires prévus et autorisés peuvent accéder aux données et les lire.*
 * __Intégrité__ - *L'intégrité des données garantit aux utilisateurs que les informations n'ont pas été altérées lors de leur transmission, de l'origine à la destination.*
 * __Disponibilité__ - *La disponibilité des données garantit aux utilisateurs un accès rapide et fiable aux services de données pour les utilisateurs autorisés*
+* __Contrôle de flux__ - *Ceci est le processus de gestion de la vitesse de transmission des données. Le contrôle de flux définit la quantité d'informations qui peuvent être envoyées et la vitesse à laquelle elles peuvent être livrées. Si une personne parle trop rapidement, l’autre personne éprouve des difficultés à entendre et à comprendre le message. Dans la communication réseau, il existe des protocoles réseau utilisés par les périphériques source et de destination pour négocier et gérer le flux d'informations.*
+* __Délai de réponse__ - *Si une personne pose une question et qu’elle n’entend pas de réponse dans un délai acceptable, elle suppose qu’aucune réponse n’a été donnée et réagit en conséquence. La personne peut répéter la question ou continuer à converser. Les hôtes du réseau sont également soumis à des règles qui spécifient le délai d'attente des réponses et l'action à entreprendre en cas de délai d'attente dépassé.*
+* __La méthode d'accès__ - *détermine le moment où un individu peut envoyer un message. Cliquez sur Lecture dans la figure pour voir une animation de deux personnes parlant en même temps, puis une "collision d'informations" se produit, et il est nécessaire que les deux personnes s'arrêtent et recommencent. De même, lorsqu'un périphérique souhaite transmettre sur un réseau local sans fil, il est nécessaire que la carte d'interface réseau WLAN (NIC) détermine si le support sans fil est disponible.*
+
+
+
 
 ### Il existe plusieurs menaces externes courantes pour les réseaux :
 * __Virus, vers, et chevaux de Trois__ - *logiciels malveillants et code arbitraire s'exécutant sur un périphérique utilisateur.*
@@ -281,6 +287,16 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 ### Deux fichiers système stockent la configuration des périphériques:
 * __startup-config__ - Ceci est le fichier de configuration enregistré qui est stocké dans NVRAM. Ce fichier stocké dans la mémoire vive non volatile contient toutes les commandes qui seront utilisées au démarrage ou au redémarrage. La mémoire vive non volatile ne perd pas son contenu lors de la mise hors tension du périphérique.
 * __running-config__ - Ceci est stocké dans la mémoire vive (RAM). Il reflète la configuration actuelle. Modifier une configuration en cours affecte immédiatement le fonctionnement d'un périphérique Cisco. La RAM est une mémoire volatile. Elle perd tout son contenu lorsque le périphérique est mis hors tension ou redémarré.
+
+### Exigences Relatives au Protocole de Réseau:
+En plus d'identifier la source et la destination, les protocoles informatiques et réseau définissent la manière dont un message est transmis sur un réseau. Les protocoles informatiques communs comprennent les exigences suivantes :
+* Codage des messages
+* Format et encapsulation des messages
+* La taille du message
+* Synchronisation des messages
+* Options de remise des messages
+
+
 - - - 
 [Sommaire](#sommaire)
 - - -
