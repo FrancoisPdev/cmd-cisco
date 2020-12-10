@@ -52,7 +52,30 @@ trunk : __802 dot1q__
 
 - - -
 ### cmd-cisco
+Une commande peut exiger un ou plusieurs arguments. Pour connaître les mots-clés et les arguments requis pour une commande, consultez la section sur la syntaxe des commandes. La syntaxe indique le modèle ou le format qui doit être utilisé lorsque vous saisissez une commande.
+
 Légende du tableau
+
+| Convention  | Description         |
+| :--------------- | :--------------- |
+| gras | Le texte en gras signale les commandes et mots-clés à saisir tels quels.|
+| Italique | Le texte en italique signale les arguments pour lesquels des valeurs doivent être saisies. |
+| [x] | Les crochets signalent un élément facultatif (mot-clé ou argument). |
+| {x} | Les accolades signalent un élément requis (mot-clé ou argument). |
+| [x {y | z }]	 | Les accolades et les lignes verticales encadrées par des crochets signalent un choix obligatoire, au sein d'un élément facultatif. Les espaces sont utilisés pour délimiter clairement les parties de la commande. |
+Les exemples suivants illustrent les conventions utilisées pour documenter et utiliser les commandes IOS:
+
+* __ping__ _ip-address_ - La commande est __ping__ et l'argument défini par l'utilisateur est l'adresse IP du périphérique de destination. Par exemple, __ping 10.10.10.5__.
+* __traceroute__ _ip-address_ - La commande est traceroute et l'argument défini par l'utilisateur est l'adresse IP du périphérique de destination. Par exemple, __traceroute 192.168.254.254__.
+
+Une aide contextuelle vous permet de trouver rapidement des réponses aux questions suivantes:
+
+* Quelles commandes sont disponibles dans chaque mode de commande?
+* Quelles commandes commencent par des caractères spécifiques ou un groupe de caractères?
+* Quels arguments et mots clés sont disponibles pour des commandes particulières?
+
+Pour afficher l'aide contextuelle, tapez simplement un point d'interrogation, __?__, dans le CLI.
+
 
 | Touche  | Description          |
 | :--------------- | :--------------- |
@@ -114,7 +137,7 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 ### configurer son router (distance)
 * en
 * conf t
-* line vty 0 4 (0 15)
+* line VTY 0 4 (0 15)
 * username 'admin' password 'admin'
 * login
 * end
@@ -221,7 +244,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 
 ### conf. à 0
 * en
-* write erase
+* write erase ou erase startup-config
 
 - - - 
 [Sommaire](#sommaire)
@@ -254,6 +277,10 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * __Attaques par déni de service__ - *Ces attaques ralentissent ou bloquent les applications et les processus sur un périphérique réseau.*
 * __Interception et vol de données__ - *Cette attaque permet de capturer des informations privées sur le réseau d'une organisation.*
 * __Usurpation d'identité__ - *Cette attaque consiste à voler les identifiants de connexion d'un utilisateur afin d'accéder à des données privées*
+
+### Deux fichiers système stockent la configuration des périphériques:
+* __startup-config__ - Ceci est le fichier de configuration enregistré qui est stocké dans NVRAM. Ce fichier stocké dans la mémoire vive non volatile contient toutes les commandes qui seront utilisées au démarrage ou au redémarrage. La mémoire vive non volatile ne perd pas son contenu lors de la mise hors tension du périphérique.
+* __running-config__ - Ceci est stocké dans la mémoire vive (RAM). Il reflète la configuration actuelle. Modifier une configuration en cours affecte immédiatement le fonctionnement d'un périphérique Cisco. La RAM est une mémoire volatile. Elle perd tout son contenu lorsque le périphérique est mis hors tension ou redémarré.
 - - - 
 [Sommaire](#sommaire)
 - - -
