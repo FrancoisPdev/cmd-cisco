@@ -1,4 +1,5 @@
 # Sommaire 
+* [Reseaux en bref](#reseaux)
 * [Commandes](#cmd-cisco)
 * [Security](#security)
 * [Description](#description)
@@ -37,6 +38,50 @@ Pour passer de n'importe quel sous-mode de configuration au mode d'exécution pr
 Vous pouvez aussi passer directement d'un sous-mode de configuration à un autre. Notez qu'après avoir sélectionné une interface, l'invite de commande change de __(config-line)#__ à __(config-if)#__.
 
 _N'oubliez pas de mettre à jour la documentation chaque fois que vous ajoutez ou modifiez un périphérique. Dans la documentation, identifiez les périphériques par leur emplacement, leur rôle et leur adresse._
+
+- - -
+# Reseaux
+Une suite de protocoles est un ensemble de protocoles qui fonctionnent ensemble pour fournir des services de communication réseau complets. Depuis les années 1970, il existe plusieurs suites de protocoles différentes, certaines développées par une organisation de normalisation et d'autres développées par divers fournisseurs.
+Au cours de l'évolution des communications réseau et de l'Internet, il y avait plusieurs suites de protocoles concurrentes:
+* __Internet Protocol Suite ou TCP/IP__ - Il s'agit de la suite de protocoles la plus courante et pertinente utilisée aujourd'hui. La suite de protocoles TCP/IP est une suite de protocoles standard ouverte gérée par Internet Engineering Task Force (IETF).
+* __Protocoles d'interconnexion de systèmes ouverts (OSI)__ - Il s'agit d'une famille de protocoles élaborés conjointement en 1977 par l'Organisation internationale de normalisation (ISO) et l'Union internationale des télécommunications (UIT). Le protocole OSI comprenait également un modèle à sept couches appelé modèle de référence OSI. Le modèle de référence OSI classe les fonctions de ses protocoles. Aujourd'hui OSI est principalement connu pour son modèle en couches. Les protocoles OSI ont été largement remplacés par TCP/IP.
+* __AppleTalk__ - Une suite de protocole propriétaire de courte durée publiée par Apple Inc. en 1985 pour les appareils Apple. En 1995, Apple a adopté TCP/IP pour remplacer AppleTalk.
+* __Novell NetWare__ - Une suite de protocole propriétaire et un système d'exploitation réseau de courte durée développé par Novell Inc. en 1983 en utilisant le protocole réseau IPX. En 1995, Novell a adopté TCP/IP pour remplacer IPX.
+
+TCP/IP est la suite de protocoles utilisée par Internet et les réseaux d'aujourd'hui. TCP/IP a deux aspects importants pour les fournisseurs et les fabricants :
+* __Suite de protocoles standards ouverts__ - *Cela signifie qu'il est librement accessible au public et peut être utilisé par n'importe quel fournisseur sur son matériel ou dans son logiciel.*
+* __Suite de protocoles basée sur des normes__ - *Cela signifie qu'elle a été approuvée par le secteur des réseaux et par un organisme de normalisation. Cela garantit que les produits de différents fabricants peuvent interagir avec succès.*
+
+
+- - -
+Le tableau énumère les différents types de protocoles nécessaires pour permettre les communications sur un ou plusieurs réseaux:
+
+| Type de protocole	  | Description         |
+| :--------------- | :--------------- |
+| __Protocoles de Communications de Réseaux__	 | Les protocoles permettent à deux ou plusieurs périphériques de communiquer sur un ou plusieurs réseaux. La famille de technologies Ethernet implique une variété de protocoles tels que IP, Transmission Control Protocol (TCP), HyperText Transfer Protocol (HTTP), et bien d'autres encore. |
+| __Protocoles de Sécurité des Réseaux__	 | Les protocoles sécurisent les données pour assurer l'authentification, l'intégrité des données et le cryptage des données. Exemples de protocoles sécurisés : Secure Shell (SSH), Secure Sockets Layer (SSL), et Transport Layer Security (TLS). |
+| __Protocoles de Routage__	 | Les protocoles permettent aux routeurs d'échanger des informations de routage, de comparer les informations sur les chemins , puis pour sélectionner le meilleur chemin vers le réseau de destination. Exemples de protocoles de routage : Open Shortest Path First (OSPF) et Border Gateway Protocol (BGP). |
+| __Protocoles de Découverte de Services__	 | Les protocoles sont utilisés pour la détection automatique des appareils ou des services. Exemples de protocoles de découverte de service : Dynamic Host Le protocole de configuration (DHCP) qui découvre des services pour l'attribution d'adresses IP , et le système de noms de domaine (DNS) qui est utilisé pour effectuer la traduction de noms en adresses IP. |
+- - -
+Les ordinateurs et les périphériques réseau utilisent des protocoles convenus pour communiquer. Le tableau énumère les fonctions de ces protocoles:
+
+| Fonction  | Description         |
+| :--------------- | :--------------- |
+| __Adressage__ | Ceci identifie l'expéditeur et le destinataire prévu du message à l'aide d'un schéma d'adressage défini. Exemples de protocoles qui fournissent l'adressage comprend Ethernet, IPv4 et IPv6. |
+| __La fiabilité__	 | Cette fonction offre des mécanismes de livraison garantis au cas où les messages seraient perdus ou corrompus pendant le transit. TCP offre une livraison garantie. |
+| __Contrôle de flux__	 | Cette fonction garantit que les données circulent à un rythme efficace entre deux dispositifs de communication. TCP fournit des services de contrôle de flux. |
+| __Séquençage__ | Cette fonction identifie de manière unique chaque segment de données transmis. Le dispositif récepteur utilise les informations de séquençage pour reconstituer l'information correctement. Ceci est utile si les segments de données sont perdus, retardée ou reçue en panne. TCP fournit des services de séquençage. |
+| __Détection des erreurs__	 | Cette fonction est utilisée pour déterminer si les données ont été endommagées pendant la transmission. Divers protocoles qui fournissent la détection des erreurs comprennent: Ethernet, IPv4, IPv6 et TCP. |
+| __Interface de l'Application__	 | Cette fonction contient des informations utilisées pour le processus à processus les communications entre les applications réseau. Par exemple, lors de l'accès à une page Web, les protocoles HTTP ou HTTPS sont utilisés pour communiquer entre le processus Web client et serveur. |
+
+* __Hypertext Transfer Protocol (HTTP)__ - *Ce protocole régit la manière dont un serveur web et un client web interagissent. Le protocole HTTP décrit le contenu et la mise en forme des requêtes et des réponses échangées entre le client et le serveur. Les logiciels du client et du serveur web implémentent le protocole HTTP dans le cadre de l'application. Le protocole HTTP dépend d'autres protocoles pour gérer le transport des messages entre le client et le serveur.*
+* __Transmission Control Protocol (TCP)__ - *Ce protocole gère les conversations individuelles. TCP est responsable de garantir la livraison fiable des informations et de gérer le contrôle du flux entre les appareils finaux.*
+* __Protocole Internet (IP)__ - *Ce protocole est responsable de la remise des messages de l'expéditeur au destinataire. IP est utilisé par les routeurs pour transférer les messages sur plusieurs réseaux.*
+* __Ethernet__ - *Ce protocole est responsable de la remise des messages d'une carte réseau à une autre carte réseau sur le même réseau local (LAN) Ethernet.*
+
+- - -
+# cmd-cisco
+Une commande peut exiger un ou plusieurs arguments. Pour connaître les mots-clés et les arguments requis pour une commande, consultez la section sur la syntaxe des commandes. La syntaxe indique le modèle ou le format qui doit être utilisé lorsque vous saisissez une commande.
 - - -
 find a little list of command CISCO via CLI de certaine serie*
 
@@ -49,11 +94,7 @@ find a little list of command CISCO via CLI de certaine serie*
 vlan : __802 1q__
 
 trunk : __802 dot1q__
-
 - - -
-### cmd-cisco
-Une commande peut exiger un ou plusieurs arguments. Pour connaître les mots-clés et les arguments requis pour une commande, consultez la section sur la syntaxe des commandes. La syntaxe indique le modèle ou le format qui doit être utilisé lorsque vous saisissez une commande.
-
 Légende du tableau
 
 | Convention  | Description         |
@@ -63,6 +104,7 @@ Légende du tableau
 | [x] | Les crochets signalent un élément facultatif (mot-clé ou argument). |
 | {x} | Les accolades signalent un élément requis (mot-clé ou argument). |
 | [x {y | z }]	 | Les accolades et les lignes verticales encadrées par des crochets signalent un choix obligatoire, au sein d'un élément facultatif. Les espaces sont utilisés pour délimiter clairement les parties de la commande. |
+- - -
 Les exemples suivants illustrent les conventions utilisées pour documenter et utiliser les commandes IOS:
 
 * __ping__ _ip-address_ - La commande est __ping__ et l'argument défini par l'utilisateur est l'adresse IP du périphérique de destination. Par exemple, __ping 10.10.10.5__.
@@ -75,8 +117,7 @@ Une aide contextuelle vous permet de trouver rapidement des réponses aux questi
 * Quels arguments et mots clés sont disponibles pour des commandes particulières?
 
 Pour afficher l'aide contextuelle, tapez simplement un point d'interrogation, __?__, dans le CLI.
-
-
+- - -
 | Touche  | Description          |
 | :--------------- | :--------------- |
 | Tabulation  | 	Complète un nom de commande entré partiellement.|
@@ -107,8 +148,7 @@ Ce tableau répertorie les commandes utilisées pour quitter une opération:
 | Ctrl+C	 | Dans un mode de configuration, permet de quitter le mode de configuration et de retourner au mode d'exécution privilégié. à partir du mode d'exécution, l'invite reparaît .|
 | Ctrl+Z	 | Dans un mode de configuration, permet de quitter le mode de configuration et de retourner au mode d'exécution privilégié.|
 | __Ctrl+Maj+6__	 | Séquence d'interruption permettant d'abandonner les recherches DNS, traceroutes, pings, etc.|
-
-
+- - -
 # Security
 Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisir les mots de passe, respectez les règles suivantes:
 
@@ -252,6 +292,8 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 # Vocabulaires
 
 * __Carte d'interface réseau (NIC)__ - *Une NIC relie physiquement le dispositif terminal au réseau.*
+* __ARP__ - *Protocole de résolution des adresses. Fournit un mappage d'adresse dynamique entre une adresse IPv4 et une adresse physique.*
+* __NAT__ - *Traduction des Adresses de Réseau. Traduit les adresses IPv4 d'un réseau privé en adresses IPv4 publiques uniques au monde*
 * __Port physique__ - *Un connecteur ou une prise sur un dispositif de réseau où le support se connecte à un dispositif terminal ou à un autre dispositif de réseau.*
 * __Interface__ - *Ports spécialisés sur un dispositif de réseau qui se connecte à des réseaux individuels. Comme les routeurs connectent les réseaux, les ports d'un routeur sont appelés interfaces de réseau.*
 * __Redondance__ - *Le fait de disposer de plusieurs chemins vers une destination*
