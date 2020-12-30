@@ -90,7 +90,7 @@ Les propriétés des supports physiques, les technologies actuelles et les lois 
 
 Le tableau décrit les unités de mesure de la bande passante couramment utilisées:
 | Unité de bande passante	  | Abréviation | Équivalence |
-| :--------------- |  |:---------------| :--------------- |
+| :--------------- |  :---------------| :--------------- |
 | Bits par seconde	 | bits/s	| 1 bit/s = unité fondamentale de bande passante|
 | Kilobits par seconde	 | Kbit/s	 | 1 kbit/s = 1000 bit/s = 103 bit/s|
 | Mégabits par seconde	 | Mbit/s	 | 1 Mbit/s = 1000 000 bit/s = 106 bit/s|
