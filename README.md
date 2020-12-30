@@ -81,6 +81,23 @@ Les ordinateurs et les périphériques réseau utilisent des protocoles convenus
 * __Protocole Internet (IP)__ - *Ce protocole est responsable de la remise des messages de l'expéditeur au destinataire. IP est utilisé par les routeurs pour transférer les messages sur plusieurs réseaux.*
 * __Ethernet__ - *Ce protocole est responsable de la remise des messages d'une carte réseau à une autre carte réseau sur le même réseau local (LAN) Ethernet.*
 
+### Bande passante
+Une combinaison de facteurs détermine la bande passante réelle d'un réseau:
+
+Les propriétés des supports physiques
+Les technologies choisies pour signaliser et détecter les signaux réseau
+Les propriétés des supports physiques, les technologies actuelles et les lois de la physique jouent toutes un rôle dans la détermination de la bande passante disponible.
+
+Le tableau décrit les unités de mesure de la bande passante couramment utilisées:
+| Unité de bande passante	  | Abréviation | Équivalence |
+| :--------------- |  |:---------------| :--------------- |
+| Bits par seconde	 | bits/s	| 1 bit/s = unité fondamentale de bande passante|
+| Kilobits par seconde	 | Kbit/s	 | 1 kbit/s = 1000 bit/s = 103 bit/s|
+| Mégabits par seconde	 | Mbit/s	 | 1 Mbit/s = 1000 000 bit/s = 106 bit/s|
+| Gigabits par seconde	 | Gbits/s	 | 1 Gbits/s = 1 000 000 000 bit/s = 109 bpsbit/s|
+| Térabits par seconde	 | Tbit/s	 | 1 Tbit/s = 1 000 000 000 000 bits/s = 1012 bits/ |
+- - -
+[Sommaire](#sommaire)
 - - -
 # cmd-cisco
 Une commande peut exiger un ou plusieurs arguments. Pour connaître les mots-clés et les arguments requis pour une commande, consultez la section sur la syntaxe des commandes. La syntaxe indique le modèle ou le format qui doit être utilisé lorsque vous saisissez une commande.
