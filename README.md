@@ -182,8 +182,8 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * line con 0
-* username 'name' password 'console'
-* login
+* username 'name' password / secret 'console'
+* login / login local
 * ctrl Z
 * quitter la cession
 
@@ -197,8 +197,8 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * line VTY 0 4 (0 15)
-* username 'admin' password 'admin'
-* login
+* username 'admin' password / secret 'admin'
+* login / login local
 * end
 
 ###  chiffrer tous les mots de passe en texte clair
