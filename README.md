@@ -205,7 +205,8 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * 'service password-encryption'
-
+- - -
+# NAT/PAT/SAT (en construction)
 - - -
 # Description
 
