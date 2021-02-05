@@ -182,8 +182,8 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * line con 0
-* username 'name' password / secret 'console'
-* login / login local
+* password 'console'
+* login 
 * ctrl Z
 * quitter la cession
 
@@ -193,13 +193,34 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * enable secret 'mot de passe'
 * exit
 
-### configurer son router (distance)
+
+### creer un utilateur | protocole ssh
 * en
 * conf t
-* line VTY 0 4 (0 15)
-* username 'admin' password / secret 'admin'
-* login / login local
+* user 'admin' secret 'mdp'
+
+### configurer son router (distance) | +protocole ssh
+* en
+* conf t
+* line VTY 0 15
+* [transport input ssh] > pour le ssh 
+* [utiliser 'login local'] > pour le ssh
+* password 'admin'
+* login local
 * end
+
+### creer un domain | protocole ssh
+* en
+* conf t
+* ip domain-name 'cisco.com'
+* ex
+
+### generer une clef RSA
+* en
+* conf t
+* crypto key generate rsa 
+* utiliser : 1024/2048
+* ip ssh version 2
 
 ###  chiffrer tous les mots de passe en texte clair
 * en
@@ -207,6 +228,21 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * 'service password-encryption'
 - - -
 # NAT/PAT/SAT (en construction)
+Attribuer d'abord les @ip et masque (ex : 'int fa 0/x' '8.8.8.254 255.255.255.0') aux interfaces du routeur et à la fois au switch avec le vlan concerné, activer le trunk aux autres interfaces si possible du commutateur. pinger vos machines
+
+sur les interfaces du routeur (static):
+* [show ip nat translations]
+* en
+* conf t
+* int fa 0/x
+* ip nat inside
+* exit
+* int fa 0/x
+* ip nat outside
+exit
+* ip nat inside source static tcp '192.168.25.1 80' '8.8.8.254 8080' > translation static pour les ports http
+* ip nat outside source static tcp '192.168.25.1 443' '8.8.8.254 8081' > transaltion static pour les ports https
+
 - - -
 # Description
 
@@ -239,6 +275,9 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * clock set? (Le point d'interrogation (?) fournit une aide et vous permet de
 déterminer le mode de saisie attendu pour configurer l'instruction)
 * show clock (pour verifier les paramètres.)
+
+### verifier SSH
+* show ip ssh
 - - -
 # Vlan conf.
 
@@ -252,13 +291,14 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 
 ### Lier un (ou plusieurs) port dans un vlan (sous CISCO)
 * conf t
-* interface fa '0/x' | interface range fa '0/x-x'
-* switch mode access
+* interface fa '0/x' | interface range fa '0/x-x' et/ou interface range fa '0/x ',' 'fa 0/x'
+* switchport mode access
 * switchport access '_mon_nom-de-vlan X_'
 * do sh vlan
 * ctrl Z
 
  ### créer des 'sub-interfaces' et leur attribuer un VLAN et une adresse IP. Cette interface deviendra le 'gateway' du VLAN (routeur CISCO)
+ [show interfaces vlan trunk]
 * en
 * int fa '0/x.X'
 * encapsulation dot1Q 'X'
@@ -266,6 +306,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * ex
 
 ### attribuer un ip sur une interface vlan (sous CISCO)
+* [show interfaces vlan]
 * en
 * conf t
 * interface 'vlan x'
@@ -274,6 +315,8 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * ctrl Z
 
 ### declarer un mode 'trunk' (etendre la communication des vlans de manière physique)
+* [show interfaces trunk]
+* en
 * conf t
 * interface fa '0/x'
 * switchport trunk encapsulation dot1q
