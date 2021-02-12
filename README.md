@@ -243,6 +243,7 @@ exit
 * ip nat inside source static tcp '192.168.25.1 80' '8.8.8.254 8080' > translation static pour les ports http
 * ip nat outside source static tcp '192.168.25.1 443' '8.8.8.254 8081' > transaltion static pour les ports https
 
+
 - - -
 # Description
 
@@ -303,6 +304,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * int fa '0/x.X'
 * encapsulation dot1Q 'X'
 * ip address '192.168.1.254 255.255.255.0'
+* [utiliser 'ip nat inside'] > pour la translation
 * ex
 
 ### attribuer un ip sur une interface vlan (sous CISCO)
@@ -319,7 +321,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * en
 * conf t
 * interface fa '0/x'
-* switchport trunk encapsulation dot1q
+* [switchport trunk encapsulation dot1q] > mode trunk du routeur sous CISCO
 * switchport mode trunk
 * switchport trunk 'allow' vlan 'x-x' (ou juste vlan 'x'  pour une seul vlan)
 * do sh ru
