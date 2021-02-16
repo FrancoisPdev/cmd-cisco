@@ -228,7 +228,12 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * conf t
 * 'service password-encryption'
 - - -
-# NAT/PAT/SAT (en construction)
+# IP route (routeur)
+* en 
+* conf t
+* ip route 0.0.0.0 0.0.0.0 @ip_du_prochain_routeur > 0.0.0.0 est par 'defaut' ~ on peut aussi utiliser : ip route 0.0.0.0 0.0.0.0 fa 0/'x'
+
+### NAT/PAT/SAT (en construction)
 Attribuer d'abord les @ip et masque (ex : 'int fa 0/x' '8.8.8.254 255.255.255.0') aux interfaces du routeur et à la fois au switch avec le vlan concerné, activer le trunk aux autres interfaces si possible du commutateur. pinger vos machines
 
 sur les interfaces du routeur (static):
@@ -236,15 +241,23 @@ sur les interfaces du routeur (static):
 * en
 * conf t
 * int fa 0/x
-* ip nat inside
+* ip nat inside coté privé (LAN)
 * exit
+puis
 * int fa 0/x
-* ip nat outside
+* ip nat outside coté public
 exit
-* ip nat inside source static tcp '192.168.25.1 80' '8.8.8.254 8080' > ex. de translation static pour les ports http
-* ip nat outside source static tcp '192.168.25.1 443' '8.8.8.254 8081' > ex. de transaltion static pour les ports https
+* ip nat inside source static 'tcp' '192.168.25.1 80' '8.8.8.254 8080' > ex. de translation static pour les ports http | 'tcp' peut-être remplacé
+* ip nat outside source static 'tcp' '192.168.25.1 443' '8.8.8.254 8081' > ex. de transaltion static pour les ports https
 
-
+### ACL (Access list) :
+[access list 'x' permit any = tout les reseaux]
+* access list 'x' permit 192.168.0.0 0.0.255.255 > ex. d'englobement du reseau 192.168 avec sa wild card 0.0.255.255 | plus fainenant -safe
+ou
+* access list 'x' permit 192.168.99.0 0.0.0.255 > ex. d'englobement du reseau 192.168.99 avec sa wild card 0.0.0.255 | plus long +safe
+* access list 'x' permit 192.168.20.0 0.0.0.255 > etc ...
+puis
+* ip nat inside source list 'x' int fa '0/x' overload > ex. > translation de port dynamique
 - - -
 # Description
 
@@ -305,7 +318,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * int fa '0/x.X'
 * encapsulation dot1Q 'X'
 * ip address '192.168.1.254 255.255.255.0'
-* [utiliser 'ip nat inside'] > pour la translation
+* [utiliser 'ip nat inside'] > pour la translation coté LAN
 * end
 
 ### attribuer un ip sur une interface vlan (sous CISCO)
