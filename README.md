@@ -191,13 +191,13 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * enable secret 'mot de passe'
-* exit
+* end
 
 
-### creer un utilateur | protocole ssh
+### creer un utilateur | +protocole ssh
 * en
 * conf t
-* user 'admin' secret 'mdp'
+* username 'admin' secret 'mdp'
 
 ### configurer son router (distance) | +protocole ssh
 * en
@@ -213,7 +213,7 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * en
 * conf t
 * ip domain-name 'cisco.com'
-* ex
+* end
 
 ### generer une clef RSA
 * en
@@ -221,6 +221,7 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * crypto key generate rsa 
 * utiliser : 1024/2048
 * ip ssh version 2
+* end
 
 ###  chiffrer tous les mots de passe en texte clair
 * en
@@ -240,8 +241,8 @@ sur les interfaces du routeur (static):
 * int fa 0/x
 * ip nat outside
 exit
-* ip nat inside source static tcp '192.168.25.1 80' '8.8.8.254 8080' > translation static pour les ports http
-* ip nat outside source static tcp '192.168.25.1 443' '8.8.8.254 8081' > transaltion static pour les ports https
+* ip nat inside source static tcp '192.168.25.1 80' '8.8.8.254 8080' > ex. de translation static pour les ports http
+* ip nat outside source static tcp '192.168.25.1 443' '8.8.8.254 8081' > ex. de transaltion static pour les ports https
 
 
 - - -
@@ -305,7 +306,7 @@ déterminer le mode de saisie attendu pour configurer l'instruction)
 * encapsulation dot1Q 'X'
 * ip address '192.168.1.254 255.255.255.0'
 * [utiliser 'ip nat inside'] > pour la translation
-* ex
+* end
 
 ### attribuer un ip sur une interface vlan (sous CISCO)
 * [show interfaces vlan]
