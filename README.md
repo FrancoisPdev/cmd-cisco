@@ -252,10 +252,10 @@ exit
 
 ### ACL (Access list) :
 [access list 'x' permit any = tout les reseaux]
-* access list 'x' permit 192.168.0.0 0.0.255.255 > ex. d'englobement du reseau 192.168 avec sa wild card 0.0.255.255 | plus fainenant -safe
+* access list 'x' permit 192.168.0.0 0.0.(255.255) > ex. d'englobement du reseau 192.168 avec sa wild card 0.0.(255.255) en (/16) | plus fainenant -safe
 ou
-* access list 'x' permit 192.168.99.0 0.0.0.255 > ex. d'englobement du reseau 192.168.99 avec sa wild card 0.0.0.255 | plus long +safe
-* access list 'x' permit 192.168.20.0 0.0.0.255 > etc ...
+* access list 'x' permit 192.168.99.0 0.0.0.(255) > ex. d'englobement du reseau 192.168.99 avec sa wild card 0.0.0.(255) (en /24) | plus long +safe
+* access list 'x' permit 192.168.20.0 0.0.0.(255) > etc ...
 puis
 * ip nat inside source list 'x' int fa '0/x' overload > ex. > translation de port dynamique
 - - -
