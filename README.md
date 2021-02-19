@@ -233,7 +233,7 @@ Utilisez des mots de passe forts qui ne sont pas faciles à deviner. Pour choisi
 * conf t
 * ip route 0.0.0.0 0.0.0.0 @ip_du_prochain_routeur > 0.0.0.0 est par 'defaut' ~ on peut aussi utiliser : ip route 0.0.0.0 0.0.0.0 fa 0/'x'
 
-### NAT/PAT/SAT (en construction)
+### NAT/PAT/SAT
 Attribuer d'abord les @ip et masque (ex : 'int fa 0/x' '8.8.8.254 255.255.255.0') aux interfaces du routeur et à la fois au switch avec le vlan concerné, activer le trunk aux autres interfaces si possible du commutateur. pinger vos machines
 
 sur les interfaces du routeur (static):
@@ -250,6 +250,7 @@ exit
 * ip nat inside source static 'tcp' '192.168.25.1 80' '8.8.8.254 8080' > ex. de translation static pour les ports http | 'tcp' peut-être remplacé
 * ip nat outside source static 'tcp' '192.168.25.1 443' '8.8.8.254 8081' > ex. de transaltion static pour les ports https
 
+sur les interfaces du routeur (dynamique):
 ### ACL (Access list) :
 [access list 'x' permit any = tout les reseaux]
 * access list 'x' permit 192.168.0.0 0.0.(255.255) > ex. d'englobement du reseau 192.168 avec sa wild card 0.0.(255.255) en (/16) | plus fainenant -safe
