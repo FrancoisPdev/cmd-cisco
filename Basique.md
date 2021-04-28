@@ -71,6 +71,19 @@ Les deux modèles de référence utilisés pour décrire les opérations réseau
 
 1 - Physique
 
+###### Modèle de référence OSI:
+| Couche du modèle OSI	| Description  |
+| :--------------- | :--------------- |
+| 1 - Physique	 | Les protocoles de la couche physique décrivent les moyens mécaniques, électriques, fonctionnels et procéduraux pour activer, maintenir et désactiver des connexions physiques pour la transmission d'un bit vers et depuis un réseau device.|
+| 2 - Liaison de données	| Les protocoles de la couche liaison de données décrivent les méthodes d'échange de de trames de données entre les appareils sur un support commun.|
+| 3 - Réseau	 | La couche réseau fournit des services permettant d'échanger les différents éléments de données individuels sur le réseau entre des dispositifs terminaux identifiés.|
+| 4 - Transport	| La couche transport définit les services à segmenter, à transférer et réassembler les données pour les communications individuelles entre les terminaux.|
+| 5 - Session | La couche de session fournit des services à la couche de présentation pour organiser son dialogue et gérer l'échange de données.|
+| 6 - Présentation	| La couche de présentation permet une représentation commune des données transférés entre les services de couche d'application.|
+| 7 - Application	| La couche application contient les protocoles utilisés pour les processus communications.|
+
+Note: Alors que les couches du modèle TCP/IP ne sont désignées que par leur nom, les sept couches du modèle OSI sont plus souvent désignées par un numéro plutôt que par leur nom. Par exemple, la couche physique est appelée couche 1 du modèle OSI, la couche de liaison de données est la couche 2, et ainsi de suite.
+
 ### Le modèle TCP/IP comporte quatre couches:
 4 - Application
 
@@ -79,6 +92,16 @@ Les deux modèles de référence utilisés pour décrire les opérations réseau
 2 - Internet
 
 1 - Accès réseau
+
+###### Le modèle de référence TCP/IP:
+| Couche du modèle TCP/IP	| Description  |
+| :--------------- | :--------------- |
+| 1 - Accès réseau	 | Contrôle les périphériques matériels et les supports qui constituent le réseau.|
+| 2 - Internet	 | Détermine le meilleur chemin à travers le réseau.|
+| 3 - Transport	 | Prend en charge la communication entre plusieurs périphériques à travers divers réseaux.|
+| 4 - Application	 | Représente des données pour l'utilisateur, ainsi que du codage et un contrôle du dialogue.|
+
+Les définitions de la norme et des protocoles TCP/IP sont discutées dans un forum public et définies dans un ensemble de RFC de l'IETF accessibles au public. Un RFC est rédigé par les ingénieurs du réseau et envoyé aux autres membres de l'IETF pour commentaires.
 
 ## Encapsulation des données :
 La segmentation des messages présente deux avantages majeurs :
